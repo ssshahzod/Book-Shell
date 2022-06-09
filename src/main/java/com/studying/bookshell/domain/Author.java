@@ -1,0 +1,43 @@
+package com.studying.bookshell.domain;
+
+import java.util.Set;
+
+public class Author {
+    private String firstName;
+    private String lastName;
+    private Set<Books> books;
+
+    public Author(){
+
+    }
+
+    public Author(String firstName, String lastName, Set<Books> books) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.books = books;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setBooks(Set<Books> books) {
+        this.books = books;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public Set<Books> getBooks() {
+        return books;
+    }
+}
