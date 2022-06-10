@@ -7,7 +7,7 @@ import java.util.Set;
 @Entity
 public class Books {
 
-    @Id
+    @Id //this shows to hibernate that 'Long id' is primary key for our entity
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 

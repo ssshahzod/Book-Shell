@@ -5,8 +5,10 @@ import com.studying.bookshell.domain.Books;
 import com.studying.bookshell.repositories.AuthorRepository;
 import com.studying.bookshell.repositories.BookRepository;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
 //Spring is gonna search for that type and gonna run it
+@Component
 public class BootStrapData implements CommandLineRunner {
 
     private final AuthorRepository authorRepository;
