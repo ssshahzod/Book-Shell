@@ -1,5 +1,6 @@
 package com.example.javaee.Servlets;
 
+import com.example.javaee.DB.DBUtil;
 import com.example.javaee.User;
 
 import javax.servlet.ServletException;
@@ -35,10 +36,14 @@ public class EmailListServlet extends HttpServlet {
             String email = request.getParameter("email");
 
             User user = new User(firstName, secondName, email);
-            //UserDB.insert(user);
 
-            request.setAttribute("user", user);
-            url = "/thanks.jsp";
+            String DBInsertion = DBUtil.AddUser(firstName, secondName, email);
+            if(DBInsertion.equals("Success")) {
+                request.setAttribute("user", user);
+                url = "/thanks.jsp";
+            }
+            request.setAttribute("error", DBInsertion);
+            url = "/error.jsp";
         }
 
         getServletContext().getRequestDispatcher(url).forward(request, response);
