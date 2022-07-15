@@ -24,7 +24,7 @@ public class DBUtil {
 
         try{
             Connection conn = DriverManager.getConnection(url, user, password);
-            PreparedStatement st = conn.prepareStatement("insert into studentdetails values(?, ?, ?)");
+            PreparedStatement st = conn.prepareStatement("insert into test.public.student_details values(?, ?, ?)");
 
             st.setString(1, firstName);
             st.setString(2, secondName);
