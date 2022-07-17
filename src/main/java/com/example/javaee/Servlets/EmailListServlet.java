@@ -42,8 +42,10 @@ public class EmailListServlet extends HttpServlet {
                 request.setAttribute("user", user);
                 url = "/thanks.jsp";
             }
-            request.setAttribute("error", DBInsertion);
-            url = "/error.jsp";
+            else {
+                request.setAttribute("error", DBInsertion);
+                url = "/error.jsp";
+            }
         }
 
         getServletContext().getRequestDispatcher(url).forward(request, response);
